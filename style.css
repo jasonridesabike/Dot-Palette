@@ -1,0 +1,114 @@
+/*
+		// A quick, palette generating PHP script:
+		// By me, Jason Crawford
+		// If you'd like a copy of the source, email me @
+		// contact@jasonridesabike.com
+		*/
+		
+
+html {
+	font-size: 62.5%;
+
+	font-family: 'Anonymous Pro';
+	font-weight: 700;
+}
+
+
+.wrap {
+	text-align: center;
+	width: 100rem;
+	height: auto;
+	margin: 3rem auto;
+	border: .4rem solid black;
+	border-radius: 3rem;
+	box-shadow: inset 1px 1px 1px 3px black;
+	padding-bottom: 6rem;
+}
+
+header {
+	margin-bottom: 4rem;
+	font-size: 1.6rem;
+	font-family: serif;
+}
+
+.dot-table {
+	display: inline-block;
+	padding: 0 2rem;
+}
+
+.dot-row {
+	display:inline-block;
+}
+
+
+.dot {
+	display: inline-block;
+	border-radius: 100%;
+	height: 17rem;
+	width:	17rem;
+	margin: .5rem;
+	transition: all rotate(1080deg);
+}
+
+.dot-caption {
+	
+	padding-top: 37%;
+	font-size: 1.6rem;
+	text-shadow: .1rem .1rem .02rem black,
+				 -.1rem .1rem .02rem black,
+				 .1rem -.1rem .02rem black,
+				 -.1rem -.1rem .02rem black;
+	visibility: hidden;
+	transition: opacity .3s ease;
+	opacity: 0;
+
+}
+
+.dot:hover .dot-caption {
+	color:white;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity .5s ease;
+	
+	
+}
+
+input {
+	
+	width: 50rem;
+	
+	border: .5rem solid white; 
+	
+    -webkit-box-shadow: 
+      inset 0 0 .8rem  rgba(0,0,0,0.15),
+            0 0 1.6rem rgba(0,0,0,0.15); 
+            
+    -moz-box-shadow: 
+      inset 0 0 .8rem  rgba(0,0,0,0.15),
+            0 0 1.6rem rgba(0,0,0,0.15); 
+            
+    box-shadow: 
+      inset 0 0 .8rem  rgba(0,0,0,0.15),
+            0 0 1.6rem rgba(0,0,0,0.15); 
+            
+    padding: 1.5rem;
+    
+    background: rgba(255,255,255,0.5);
+    
+    margin: 0 0 1rem 0;
+}
+
+#input-box {
+	
+	margin-top: 1.5rem;
+	
+}
+
+#submit {
+	width: 15rem;
+}
+
+
+
+
+
