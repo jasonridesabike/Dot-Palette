@@ -38,9 +38,9 @@ function inputParcer($input) {
 				$entry = preg_replace('/#/', '', $entry);
 				
 				
-				$rHex = substr($entry, 1, 2);
-				$gHex = substr($entry, 3, 2);
-				$bHex = substr($entry, 5, 2);
+				$rHex = substr($entry, 0, 2);
+				$gHex = substr($entry, 2, 2);
+				$bHex = substr($entry, 4, 2);
 				
 				
 				$rDec = hexdec($rHex);
