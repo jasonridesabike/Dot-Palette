@@ -56,7 +56,19 @@ function inputParcer($input) {
 				}
 				
 					
-			elseif ((strlen($entry) <= 13)) {
+			elseif (strlen($entry) <= 13) {
+				
+				$vals = explode(',', $entry, 3); //seperates each rgb and trims whitespace
+
+				$entry = "";
+
+				foreach ($vals as $val) {
+
+					$entry .= trim($val).","; // concatenate the new values
+			
+				}
+
+				$entry = substr($entry, 0, strlen($entry)-1); // remove the trailing comma
 				
 				$colors[] = "$entry";
 			
