@@ -53,7 +53,7 @@ function inputParcer($input) {
 				
 				$colors[] = "$rgbColor";
 			
-				}
+			}
 				
 					
 			elseif (strlen($entry) <= 13) {
