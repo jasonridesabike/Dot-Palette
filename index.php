@@ -10,8 +10,6 @@
 	<!-- 	
 	// A quick, palette generating PHP script:
 	// By me, Jason Crawford
-	// If you'd like a copy of the source, email me @
-	// contact@jasonridesabike.com
 	-->
 	
 	<?php
