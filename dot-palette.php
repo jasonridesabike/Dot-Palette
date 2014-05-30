@@ -6,6 +6,13 @@
 //----Functions:---------------------------------------------------------------------------------------------------
 
 function inputParcer($input) {
+
+		// If empty strings get past the Javascript validation
+		if(strlen($input) == 0)
+		{
+			echo "No colors found, here's an example";
+			$input = "#123456";
+		}
 	
 		global $entries;
 		

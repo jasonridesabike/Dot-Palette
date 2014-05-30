@@ -1,5 +1,20 @@
 var inputBox = document.getElementById('input-box');
 
+var randomButton = document.getElementById('random-color');
+
+var submitButton = document.getElementById('submit');
+
+var hexList = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+
+var colorKey = {"maroon":"800000","red":"FF0000","orange":"FFA500","yellow":"FFFF00","olive":"808000","green":"008000","purple":"800080","fuchsia":"FF00FF","lime":"00FF00","teal":"008080","aqua":"00FFFF","blue":"0000FF","navy":"000080","black":"000000","gray":"808080","silver":"C0C0C0","white":"FFFFFF"};
+
+// Optional function to set the button id
+function setID(id) {
+
+	inputBox = document.getElementById(id);
+
+}
+
 // Generates a 1 digit hex number
 function getDigit() {
 
@@ -41,7 +56,7 @@ function showHex(hexColor) {
 
 	if (inputBox.value.length > 0) {
 
-		inputBox.value += ";"+hexColor;
+		inputBox.value += ";";
 
 	}
 
@@ -56,4 +71,54 @@ function GenerateNewRandomColor() {
 
 	showHex(newColor);
 
+}
+
+// Event listener for adding random colors
+randomButton.onclick = function() {
+
+	GenerateNewRandomColor();
+
+}
+
+// Parse input-box to keep some load off the server
+submitButton.onclick = function() {
+
+	if(inputBox.value.length === 0) {
+
+		for(var i = 0; i < 3; i++) {
+
+			GenerateNewRandomColor();
+
+		}
+
+	}
+
+	// Allow for some keywords and convert them before submitting
+	else {
+
+		var temp = inputBox.value.split(";");
+
+		inputBox.value = "";
+
+		for(var i = 0; i < temp.length; i++) {
+
+			temp[i] = temp[i].trim().toLowerCase();
+
+			if(colorKey[temp[i]]) {
+
+				temp[i] = "#"+colorKey[temp[i]];
+
+			}
+
+			if(i > 0) {
+
+				inputBox.value += ";";
+
+			}
+
+			inputBox.value += temp[i];
+
+		}
+
+	}
 }
