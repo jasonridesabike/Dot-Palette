@@ -217,7 +217,7 @@
 		
 	?>
 	
-	<!-- CSS: --------------------------------------------------->
+	<!-- CSS: ------------------------------------------------- -->
 
 	<style>
 		/* Colors: */
@@ -293,7 +293,7 @@
 		<input type="text" name="input" id="input-box"><br />
 		<input type="submit" value="dot me right now" id="submit"><br />
 		<input type="button" value="start me off" id="random-color"><br />
-		
+		</form>
 		
 		</p>
 		<?php

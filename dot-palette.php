@@ -6,6 +6,13 @@
 //----Functions:---------------------------------------------------------------------------------------------------
 
 function inputParcer($input) {
+
+		// If empty strings get past the Javascript validation
+		if(strlen($input) == 0)
+		{
+			echo "No colors found, here's an example";
+			$input = "#123456";
+		}
 	
 		global $entries;
 		
@@ -32,10 +39,53 @@ function inputParcer($input) {
 		$colors = array();
 		
 		foreach ($entries as $entry) {
+
+			// Check for RGB with commas rather than length
+			if(strpos($entry, ',')) {
+
+				$vals = explode(',', $entry); //seperates each rgb and trims whitespace
+
+				if(count($vals) == 3) {
+
+					$entry = "";
+
+					foreach ($vals as $val) {
+
+						if($val != "") {
+
+							$entry .= trim($val).","; // concatenate the new values
+						
+						}
+
+						else {
+
+							$entry .= "0,"; // concatenate the new values
+
+						}
+
+					}
+
+					$entry = substr($entry, 0, strlen($entry)-1); // remove the trailing comma
+
+				}
+
+				else {
+
+					$entry = "0,0,0";
+
+				}
+				
+				$colors[] = "$entry";
+
+			}
 		
-			if  (preg_match('/#/', $entry)) {  //is the first char #? TODO: does the entry consist of 7 chars?
+			elseif  (strlen($entry)) {  //is the string 7 characters or less?
 			
-				$entry = preg_replace('/#/', '', $entry);
+				if (preg_match('/#/', $entry)) {
+
+					$entry = preg_replace('/#/', '', $entry);
+
+				}
 				
 				
 				$rHex = substr($entry, 0, 2);
@@ -54,24 +104,11 @@ function inputParcer($input) {
 				$colors[] = "$rgbColor";
 			
 			}
-				
-					
-			elseif (strlen($entry) <= 13) {
-				
-				$vals = explode(',', $entry, 3); //seperates each rgb and trims whitespace
 
-				$entry = "";
+			elseif(strlen($entry) === 0) {
 
-				foreach ($vals as $val) {
+				// Do Nothing, just a trailing semicolon
 
-					$entry .= trim($val).","; // concatenate the new values
-			
-				}
-
-				$entry = substr($entry, 0, strlen($entry)-1); // remove the trailing comma
-				
-				$colors[] = "$entry";
-			
 			}
 			
 			else {
