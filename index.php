@@ -217,7 +217,7 @@
 		
 	?>
 	
-	<!-- CSS: --------------------------------------------------->
+	<!-- CSS: ------------------------------------------------- -->
 
 	<style>
 		/* Colors: */
@@ -292,7 +292,8 @@
 		<p>here's an example: #ff0000; #009999; 0, 204, 0; #ff7373; #ffb273; #5ccccc; #67e667</p>
 		<input type="text" name="input" id="input-box"><br />
 		<input type="submit" value="dot me right now" id="submit"><br />
-		
+		<input type="button" value="start me off" id="random-color"><br />
+		</form>
 		
 		</p>
 		<?php
@@ -306,5 +307,7 @@
 		
 	
 	</div>
+
+	<script type="text/javascript" src="randomcolors.js"></script>
 
 </body>

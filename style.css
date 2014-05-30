@@ -104,7 +104,7 @@ input {
 	
 }
 
-#submit {
+#submit, #random-color {
 	width: 15rem;
 }
 
