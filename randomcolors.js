@@ -110,6 +110,7 @@ submitButton.onclick = function() {
 
 			}
 
+<<<<<<< HEAD
 			else if(temp[i].indexOf(',') !== -1) {
 
 				var rgb = temp[i].split(',');
@@ -146,6 +147,8 @@ submitButton.onclick = function() {
 
 			}
 
+=======
+>>>>>>> 4a6e231e38eda93b31373c546e90f578a092a07e
 			if(i > 0) {
 
 				inputBox.value += ";";
@@ -157,5 +160,8 @@ submitButton.onclick = function() {
 		}
 
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4a6e231e38eda93b31373c546e90f578a092a07e
 }
